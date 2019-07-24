@@ -88,7 +88,7 @@ ggsave(file="output/figure_5b.pdf",width = 8, height = 8)
 ggsave(file="output/figure_5b.png",width = 8, height = 8)
 
 
-## Figure A3
+## Figure A2
 ggplot(data_stata, aes(x=pred_out_state_demand_na_sys/1e6, y=out_state_demand_na/1e6)) + 
  labs(x = "Instrument for Out-of-State REC Demand (TWh)", y="Actual Out-of-State REC Demand (TWh)") + 
  theme_minimal() + guides(fill=FALSE) + geom_point( size=2,colour="grey27",alpha=1)  +
