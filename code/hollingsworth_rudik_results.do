@@ -9,7 +9,11 @@
 
 // DESCRIPTION:
 // THIS FILE RUNS THE SCRIPTS TO REPLICATE OUR TABLES AND FIGURES IN THE PAPER
-// AND THE ONLINE APPENDIX, EXCEPT FOR FIGURES 2, 5, AND A2
+// AND THE ONLINE APPENDIX, EXCEPT FOR FIGURES 1, 2, 5, AND A2.
+// FIGURES 2, 5, AND A2 CAN BE REPLICATED USING THE R CODE FOUND IN THE SAME 
+// FOLDER AS THIS FILE.
+// FIGURE 1 WAS MADE IN QGIS AND CAN BE FOUND IN THE OUTPUT FOLDER IN THIS 
+// REPO.
 
 // INSTRUCTIONS:
 // RUN THIS FILE TO REPLICATE ALL RESULTS AFTER BUILDING THE MAIN DATASET (OR 
@@ -71,6 +75,7 @@ graph set window fontface "Helvetica"
 global script_path "$root_path/code" // Path for running the scripts to create tables and figures
 global results_path "$root_path/output" // Path for tables/figures output
 global data_path "$root_path/data" // Path for data
+global temp_path "$root_path/temp" // Path for temp data
 
 ////////////////////////////////////
 ////////////////////////////////////
@@ -83,6 +88,8 @@ do "$script_path/table_1.do" // Main results: Table 1
 do "$script_path/table_2.do" // Remove non-parallel pre-trend states: Table 2 and Figure A1
 
 do "$script_path/figure_3.do" // Quantity supplied vs quantity demanded for RECs: Figure 3
+
+do "$script_path/figure_4.do" // Create map of potential trade partners v actual trade in 2011. Figure 4. 
 
 do "$script_path/figure_6.do" // Avoided damage per REC vs RECs required to meet 
 							// 1% higher RPS, or avoided damage per 1% RPS vs
@@ -103,4 +110,5 @@ do "$script_path/table_a13.do" // Heterogeneous plant responses: Table A13 and F
 
 do "$script_path/summary_stats_full_tables.do" // Create summary statistics table and full specification tables: Tables A1-A7
 
+do "$script_path/figure_a3_to_a6.do" // Create histograms of generation at plant level by type: Figures A3-A6
 
